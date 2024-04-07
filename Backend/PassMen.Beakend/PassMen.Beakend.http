@@ -1,0 +1,6 @@
+@PassMen.Beakend_HostAddress = http://localhost:5149
+
+GET {{PassMen.Beakend_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
