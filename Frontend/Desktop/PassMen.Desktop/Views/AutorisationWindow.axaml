@@ -1,0 +1,69 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:vm="using:PassMen.Desktop.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="200" d:DesignHeight="200"
+		Height="200"
+		Width="200"
+		MinHeight="200"
+		MinWidth="200"
+		MaxHeight="200"
+		MaxWidth="200"
+		
+        x:Class="PassMen.Desktop.Views.AutorisationWindow"
+		
+		Background="#aeb6c4"
+		WindowStartupLocation="CenterScreen"
+		
+        Title="AutorisationWindow">
+	<Design.DataContext>
+		<vm:AutorisationViewModel />
+	</Design.DataContext>
+	<Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition/>
+			<RowDefinition Height="40"/>
+			<RowDefinition Height="40"/>
+		</Grid.RowDefinitions>
+		<Grid Grid.Row="0">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition/>
+				<ColumnDefinition/>
+			</Grid.ColumnDefinitions>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="40"/>
+				<RowDefinition Height="40"/>
+				<RowDefinition/>
+			</Grid.RowDefinitions>
+			<TextBlock Text="Логин"
+					   Classes="lb_white"
+					   HorizontalAlignment="Right"/>
+			<TextBox Grid.Column="1"
+					 Height="20"
+					 Margin="5,2"
+					 Text="{Binding Login}"/>
+			<TextBlock Grid.Row="1"
+				Text="Пароль"
+					   Classes="lb_white"
+					   HorizontalAlignment="Right"/>
+			<TextBox Grid.Column="1"
+					 Grid.Row="1"
+					 Height="20"
+					 Margin="5,2"
+					 Text="{Binding Password}"/>
+			<TextBlock Grid.Row="2"
+					   Text="{Binding Message}"/>
+		</Grid>
+		<Button Grid.Row="1"
+				Content="Войти"
+				Classes="btn"
+				HorizontalAlignment="Center"				
+				Command="{Binding GetUserCommand}"/>
+		
+		<Button Grid.Row="2"
+				Content="Создать"
+				Classes="btn"
+				HorizontalAlignment="Center"/>
+	</Grid>
+</Window>

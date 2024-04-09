@@ -4,7 +4,26 @@
              RequestedThemeVariant="Default">
              <!-- "Default" ThemeVariant follows system theme variant. "Dark" or "Light" are other available options. -->
 
-    <Application.Styles>
-        <FluentTheme />
-    </Application.Styles>
+	<Application.Styles>
+		<FluentTheme />
+		<Style Selector="Button.btn /template/ ContentPresenter">
+			<Setter Property="CornerRadius" Value="3" />
+		</Style>
+		<Style Selector="Button.btn">
+			<Setter Property="Foreground" Value="#353C49" />
+			<Setter Property="BorderThickness" Value="2" />
+			<Setter Property="Background" Value="#e3e9f3" />
+			<Setter Property="BorderBrush" Value="#e3e9f3" />
+		</Style>
+		<Style Selector="Button:pointerover.btn /template/ ContentPresenter">
+			<Setter Property="BorderBrush" Value="#e3e9f3" />
+			<Setter Property="Foreground" Value="#FFFFFFFF" />
+		</Style>
+
+		<Style Selector="TextBlock.lb_white">
+			<Setter Property="Foreground" Value="White"/>
+			<Setter Property="FontSize" Value="20"/>
+			<Setter Property="VerticalAlignment" Value="Center"/>
+		</Style>
+	</Application.Styles>
 </Application>
